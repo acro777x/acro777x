@@ -81,7 +81,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 drwxr-xr-x  acromap        Deep Penetration Testing Framework (32-Phases)
 drwxr-xr-x  study-hub      Zero-Friction AI Assistant (TRL-4 Innovation Winner)
 drwxr-xr-x  ghost-chat     Privacy-First End-to-End Encrypted Architecture
-drwxr-xr-x  deepguard      AI Forgery & Forensic Detection Suite
+
 ```
 
 <br>
