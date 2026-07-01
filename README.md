@@ -5,6 +5,8 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=55&pause=1500&color=52f2b1&center=true&vCenter=true&width=600&height=100&lines=ASHISH;ACRO;ASHISH;ACRO" alt="Hero Typing SVG" />
 </a>
 
+
+
 <!-- Subtitle Loop matching the site -->
 <a href="https://acrox.space" target="_blank">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&pause=1000&color=a0aec0&center=true&vCenter=true&width=600&height=40&lines=Cybersecurity+Researcher;Backend+Architect;Autonomous+AI+Developer;Offensive+Security+Specialist" alt="Subtitle Typing SVG" />
