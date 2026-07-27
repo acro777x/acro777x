@@ -42,8 +42,4 @@ jobs:
           extras_css: |
             svg { background-color: #000000 !important; }
             rect { fill: #000000 !important; }
-            text, tspan { fill: #52f2b1 !important; }          # --- Notable contributions (PRs to other repos) ---
-          plugin_notable: yes
-          plugin_notable_from: 2024-01-01
-
-          filename: metrics.svg
+            text, tspan { fill: #52f2b1 !important; }
