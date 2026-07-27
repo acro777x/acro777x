@@ -73,6 +73,99 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 
 ***
 
+### 📈  DEEP ACTIVITY SCAN
+
+<br>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/acro777x/acro777x/main/metrics.svg" alt="GitHub Metrics — isometric calendar, languages, achievements, notable contributions" width="100%" />
+</p>
+
+<br><br>
+
+***
+
+### 🛡️  DEPLOYED OPERATIONS
+
+<br>
+
+```bash
+> ls -la /var/operations
+
+drwxr-xr-x  acromap        Deep Penetration Testing Framework (32-Phases)
+drwxr-xr-x  study-hub      Zero-Friction AI Assistant (TRL-4 Innovation Winner)
+drwxr-xr-x  ghost-chat     Privacy-First End-to-End Encrypted Architecture
+
+```
+
+<br>
+
+***
+
+<div align="center">
+  <br>
+  <img src="https://komarev.com/ghpvc/?username=acro777x&color=52f2b1&style=for-the-badge&label=UNIQUE_VISITORS" alt="Profile Views" />
+</div>
+
+</div>
+
+I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-latency software, offensive security frameworks, and privacy-first architectures. I don't just write code; I build unbreakable infrastructure. From deep penetration testing tools to human-like AI environments, my deployments operate flawlessly in the shadows.
+
+<br>
+
+<a href="https://acrox.space">
+  <img src="https://img.shields.io/badge/Access_My_Web_Mainframe-000000?style=for-the-badge&logo=vercel&logoColor=52f2b1&borderColor=52f2b1" />
+</a>
+<a href="https://github.com/acro777x">
+  <img src="https://img.shields.io/github/followers/acro777x?style=for-the-badge&color=000000&logo=github&logoColor=52f2b1&borderColor=52f2b1" />
+</a>
+<a href="#">
+  <img src="https://img.shields.io/badge/Encrypted_Comm-000000?style=for-the-badge&logo=protonmail&logoColor=52f2b1&borderColor=52f2b1" />
+</a>
+
+<br><br>
+
+***
+
+### ⚙️  CORE COMPETENCIES
+
+<br>
+
+<img src="https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=52f2b1&borderColor=1a1a1a" />
+<img src="https://img.shields.io/badge/Node.js-000000?style=for-the-badge&logo=node.js&logoColor=52f2b1&borderColor=1a1a1a" />
+<img src="https://img.shields.io/badge/FastAPI-000000?style=for-the-badge&logo=fastapi&logoColor=52f2b1&borderColor=1a1a1a" />
+<img src="https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react&logoColor=52f2b1&borderColor=1a1a1a" />
+<br>
+<img src="https://img.shields.io/badge/GNU_Bash-000000?style=for-the-badge&logo=gnu-bash&logoColor=52f2b1&borderColor=1a1a1a" />
+<img src="https://img.shields.io/badge/Docker-000000?style=for-the-badge&logo=docker&logoColor=52f2b1&borderColor=1a1a1a" />
+<img src="https://img.shields.io/badge/Git-000000?style=for-the-badge&logo=git&logoColor=52f2b1&borderColor=1a1a1a" />
+<img src="https://img.shields.io/badge/Linux_Kernel-000000?style=for-the-badge&logo=linux&logoColor=52f2b1&borderColor=1a1a1a" />
+
+<br><br>
+
+***
+
+###  GITHUB METRICS
+
+<br>
+
+<p align="center">
+  <a href="https://github.com/acro777x">
+    <img src="https://github-readme-stats.vercel.app/api?username=acro777x&show_icons=true&hide_border=true&bg_color=000000&title_color=52f2b1&icon_color=52f2b1&text_color=8a8a8a&ring_color=52f2b1" alt="GitHub Stats" width="48%" />
+  </a>
+  <a href="https://github.com/acro777x">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=acro777x&layout=compact&hide_border=true&bg_color=000000&title_color=52f2b1&text_color=8a8a8a" alt="Top Languages" width="48%" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=acro777x&theme=dark&background=000000&border=000000&ring=52f2b1&fire=52f2b1&currStreakNum=ffffff&sideNums=ffffff&currStreakLabel=8a8a8a&sideLabels=8a8a8a&dates=8a8a8a" alt="GitHub Streak" width="100%" />
+</p>
+
+<br><br>
+
+***
+
 ### 🛡️  DEPLOYED OPERATIONS
 
 <br>
