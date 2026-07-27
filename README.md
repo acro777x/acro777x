@@ -95,6 +95,11 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 
 ***
 
+### 🛡️  DEPLOYED OPERATIONS
+
+<br>
+
+```bash
 $ cat /var/operations/manifest.log
 
 [ACTIVE]   acromap        » Deep Penetration Testing Framework — 32-Phase Automation
@@ -118,6 +123,16 @@ $ cat /var/operations/manifest.log
            └─ repo    : private
 
 $ _
+```
+
+<br>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/32--Phase-Pentest_Framework-000000?style=flat-square&labelColor=000000&color=52f2b1" />
+  <img src="https://img.shields.io/badge/WhatsApp-AI_Bot-000000?style=flat-square&labelColor=000000&color=52f2b1" />
+  <img src="https://img.shields.io/badge/ESP32-LoRa_Mesh-000000?style=flat-square&labelColor=000000&color=52f2b1" />
+  <img src="https://img.shields.io/badge/GPG-Signed_Commits-000000?style=flat-square&labelColor=000000&color=52f2b1" />
+</p>
 
 <br>
 
