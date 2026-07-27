@@ -1,10 +1,8 @@
- 
-
 name: Metrics
 on:
   schedule:
-    - cron: "0 0 * * *"   # runs daily at midnight UTC
-  workflow_dispatch:        # lets you trigger it manually from Actions tab
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   github-metrics:
@@ -34,7 +32,17 @@ jobs:
           plugin_achievements: yes
           plugin_achievements_display: detailed
 
-          # --- Notable contributions (PRs to other repos) ---
+          # --- Notable contributions ---
+          plugin_notable: yes
+          plugin_notable_from: 2024-01-01
+
+          filename: metrics.svg
+
+          # --- Attempt to recolor to match README (black bg + neon green) ---
+          extras_css: |
+            svg { background-color: #000000 !important; }
+            rect { fill: #000000 !important; }
+            text, tspan { fill: #52f2b1 !important; }          # --- Notable contributions (PRs to other repos) ---
           plugin_notable: yes
           plugin_notable_from: 2024-01-01
 
