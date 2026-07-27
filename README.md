@@ -95,18 +95,29 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 
 ***
 
-### 🛡️  DEPLOYED OPERATIONS
+$ cat /var/operations/manifest.log
 
-<br>
+[ACTIVE]   acromap        » Deep Penetration Testing Framework — 32-Phase Automation
+           ├─ stack   : Bash · GPG-signed commits
+           ├─ status  : v5.0 · public
+           └─ repo    : github.com/acro777x/acromap
 
-```bash
-> ls -la /var/operations
+[ACTIVE]   study-hub      » Zero-Friction Campus AI Assistant
+           ├─ stack   : WhatsApp Bot · Razorpay · HMAC QR
+           ├─ status  : deployed · TRL-4 Innovation Award (IgNITionHack 2.0)
+           └─ repo    : github.com/acro777x/study-hub-bot
 
-drwxr-xr-x  acromap        Deep Penetration Testing Framework (32-Phases)
-drwxr-xr-x  study-hub      Zero-Friction AI Assistant (TRL-4 Innovation Winner)
-drwxr-xr-x  ghost-chat     Privacy-First End-to-End Encrypted Architecture
+[ACTIVE]   ghost-chat     » Privacy-First Encrypted Comms
+           ├─ stack   : ESP32 · LoRa Mesh (866MHz) · AES-256-GCM
+           ├─ status  : v3 · captive-portal + companion Android app
+           └─ repo    : github.com/acro777x/ghost-chat
 
-```
+[BUILDING] acroprobe      » Network Recon & Forensic Mapper
+           ├─ stack   : Python
+           ├─ status  : early development
+           └─ repo    : private
+
+$ _
 
 <br>
 
