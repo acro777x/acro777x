@@ -61,7 +61,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 </p>
 
 <p align="center">
-  <img src="assets/tech_joke.svg" alt="Random Tech Joke" width="100%" style="max-width: 680px;" />
+  <img src="https://acro-jokes-worker.armanashkumar123.workers.dev" alt="Random Tech Joke" width="100%" style="max-width: 680px;" />
 </p>
 
 <br>
