@@ -130,26 +130,10 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
   <img src="assets/hdr_operations.svg" alt="Deployed Operations Header" width="100%" style="max-width: 820px;" />
 </p>
 
-```bash
-$ cat /var/operations/manifest.log
-
-[ACTIVE]   acromap        » Deep Penetration Testing Framework — 32-Phase Automation
-           ├─ stack   : Bash · GPG-signed commits
-           ├─ status  : v5.0 · public
-           └─ repo    : github.com/acro777x/acromap
-
-[ACTIVE]   study-hub      » Zero-Friction Campus AI Assistant
-           ├─ stack   : WhatsApp Bot · Razorpay · HMAC QR
-           ├─ status  : deployed · TRL-4 Innovation Award (IgNITionHack 2.0)
-           └─ repo    : github.com/acro777x/study-hub-bot
-
-[ACTIVE]   ghost-chat     » Privacy-First Encrypted Comms
-           ├─ stack   : ESP32 · LoRa Mesh (866MHz) · AES-256-GCM
-           ├─ status  : v3 · captive-portal + companion Android app
-           └─ repo    : github.com/acro777x/ghost-chat
-
-$ _
-```
+<!-- Live Animated Terminal Manifest -->
+<p align="center">
+  <img src="assets/terminal_manifest.gif" alt="Active Deployed Operations Terminal" width="100%" style="max-width: 820px; border-radius: 9px; border: 1px solid #52f2b144;" />
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/32--Phase-Pentest_Framework-000000?style=flat-square&labelColor=000000&color=52f2b1" alt="Pentest Framework" />
