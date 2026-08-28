@@ -935,10 +935,14 @@ function renderJokeSvg() {
 
 // ================= KASPERSKY REALISTIC ROTATING 3D EARTH CYBER MAP =================
 // ================= KASPERSKY REALISTIC ROTATING 3D EARTH CYBER MAP =================
-// ================= KASPERSKY REALISTIC ROTATING 3D EARTH CYBER MAP =================
+// ================= KASPERSKY REALISTIC ROTATING 3D EARTH CYBER MAP (LIVE ATTACK COUNTER) =================
 function renderKasperskyEarthSvg() {
   const utc = new Date().toTimeString().slice(0, 8) + " UTC";
-  const count = (18490000 + Math.floor(Math.random() * 9500)).toLocaleString();
+  const base = 18490000 + Math.floor(Math.random() * 9500);
+  const c = [];
+  for (let i = 0; i < 10; i++) {
+    c.push((base + i * 9 + Math.floor(Math.random() * 3)).toLocaleString());
+  }
   return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 820 440" width="100%" height="auto">
   <defs>
     <!-- Cyan & Mint Glow Filters -->
@@ -1028,6 +1032,10 @@ function renderKasperskyEarthSvg() {
       <circle cx="710" cy="580" r="6" fill="#ffbd2e" filter="url(#cyberGlow)" />
       <text x="724" y="585" font-size="18" fill="#ffbd2e" font-weight="bold" stroke="#040910" stroke-width="0.8" paint-order="stroke fill">AU</text>
     </g>
+      <!-- Live Attack Counter Odometer Clip -->
+    <clipPath id="counterClip">
+      <rect x="615" y="141" width="180" height="18" />
+    </clipPath>
   </defs>
 
   <style>
@@ -1083,6 +1091,22 @@ function renderKasperskyEarthSvg() {
     }
     text {
       font-family: 'Consolas', 'Fira Code', 'Monaco', 'Courier New', monospace;
+    }
+      @keyframes rollCounter {
+      0%, 9.99%   { transform: translateY(0px); }
+      10%, 19.99% { transform: translateY(-18px); }
+      20%, 29.99% { transform: translateY(-36px); }
+      30%, 39.99% { transform: translateY(-54px); }
+      40%, 49.99% { transform: translateY(-72px); }
+      50%, 59.99% { transform: translateY(-90px); }
+      60%, 69.99% { transform: translateY(-108px); }
+      70%, 79.99% { transform: translateY(-126px); }
+      80%, 89.99% { transform: translateY(-144px); }
+      90%, 99.99% { transform: translateY(-162px); }
+      100%        { transform: translateY(-180px); }
+    }
+    .live-counter-reel {
+      animation: rollCounter 10s infinite;
     }
   </style>
 
@@ -1157,14 +1181,37 @@ function renderKasperskyEarthSvg() {
   <text x="617" y="88" font-size="9.5" fill="#e6edf3">#1 INDIA         : <tspan fill="#ff2a55" font-weight="bold">CRITICAL</tspan></text>
   <text x="617" y="104" font-size="9.5" fill="#e6edf3">#2 UNITED STATES : <tspan fill="#ffbd2e">ELEVATED</tspan></text>
   <text x="617" y="120" font-size="9.5" fill="#e6edf3">#3 GERMANY       : <tspan fill="#52f2b1">STABLE</tspan></text>
-  <text x="617" y="138" font-size="9" fill="#8b949e">TOTAL ATTACKS TODAY:</text>
-  <text x="617" y="154" font-size="14" font-weight="bold" fill="#00e5ff">${count}</text>
+  <text x="617" y="138" font-size="9" fill="#8b949e">TOTAL ATTACKS TODAY: <tspan fill="#52f2b1" font-size="8.5">[+8/s LIVE]</tspan></text>
+  <g clip-path="url(#counterClip)">
+    <g class="live-counter-reel">
+      <text x="617" y="155" font-size="14" font-weight="bold" fill="#00e5ff">18,492,034</text>
+      <text x="617" y="173" font-size="14" font-weight="bold" fill="#00e5ff">18,492,042</text>
+      <text x="617" y="191" font-size="14" font-weight="bold" fill="#00e5ff">18,492,051</text>
+      <text x="617" y="209" font-size="14" font-weight="bold" fill="#00e5ff">18,492,060</text>
+      <text x="617" y="227" font-size="14" font-weight="bold" fill="#00e5ff">18,492,068</text>
+      <text x="617" y="245" font-size="14" font-weight="bold" fill="#00e5ff">18,492,077</text>
+      <text x="617" y="263" font-size="14" font-weight="bold" fill="#00e5ff">18,492,085</text>
+      <text x="617" y="281" font-size="14" font-weight="bold" fill="#00e5ff">18,492,094</text>
+      <text x="617" y="299" font-size="14" font-weight="bold" fill="#00e5ff">18,492,103</text>
+      <text x="617" y="317" font-size="14" font-weight="bold" fill="#00e5ff">18,492,112</text>
+    </g>
+  </g>
 
   <!-- Bottom Console Status -->
   <rect x="20" y="380" width="780" height="42" rx="6" fill="#050a12" fill-opacity="0.92" stroke="#00e5ff" stroke-opacity="0.2" stroke-width="1" />
   <text x="32" y="398" font-size="9.5" fill="#8b949e"><tspan fill="#52f2b1" font-weight="bold">[KASPERSKY LIVE FEED]</tspan> 3D rotating globe with locked continental threat vectors.</text>
   <text x="32" y="413" font-size="9.5" fill="#8b949e"><tspan fill="#00e5ff" font-weight="bold">[CLICK TO OPEN]</tspan> Launch interactive 3D WebGL cybermap at <tspan fill="#52f2b1">cybermap.kaspersky.com</tspan></text>
-</svg>`;
+</svg>`
+    .replace('18,492,034', c[0])
+    .replace('18,492,042', c[1])
+    .replace('18,492,051', c[2])
+    .replace('18,492,060', c[3])
+    .replace('18,492,068', c[4])
+    .replace('18,492,077', c[5])
+    .replace('18,492,085', c[6])
+    .replace('18,492,094', c[7])
+    .replace('18,492,103', c[8])
+    .replace('18,492,112', c[9]);
 }
 
 export default {

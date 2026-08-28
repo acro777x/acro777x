@@ -44,7 +44,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 
 <!-- KASPERSKY REALISTIC 3D CYBER ATTACK EARTH RADAR -->
 <p align="center">
-  <a href="https://cybermap.kaspersky.com/" target="_blank" title="Launch Interactive 3D Kaspersky Cybermap">
+  <a href="https://cybermap.kaspersky.com/en/widget/dynamic/dark" target="_blank" title="Launch Interactive 3D Kaspersky Cybermap Widget">
     <img src="https://acro-jokes-worker.armanashkumar123.workers.dev/radar" alt="Kaspersky Global Cyber Attack Radar" width="100%" style="max-width: 820px;" />
   </a>
 </p>
