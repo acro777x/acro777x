@@ -42,20 +42,27 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 
 <br>
 
-<!-- AUDIO FEED SECTION -->
+<!-- 3D CYBER ATTACK EARTH RADAR SECTION -->
+<p align="center">
+  <img src="https://acro-jokes-worker.armanashkumar123.workers.dev/radar" alt="Global Cyber Attack Radar" width="100%" style="max-width: 820px;" />
+</p>
+
+<br>
+
+<!-- AUDIO FEED SECTION (28 TRACKS ROTATION + LIVE WAVEFORM) -->
 <p align="center">
   <img src="assets/hdr_music.svg" alt="Audio Feed Header" width="100%" style="max-width: 820px;" />
 </p>
 
 <p align="center">
-  <a href="https://open.spotify.com/track/70YFXFbrvl5J3nUfqxTFue" target="_blank">
-    <img src="assets/spotify_tension.svg" alt="Vibing to: Tension - Dhanda Nyoliwala" width="100%" style="max-width: 540px;" />
+  <a href="https://acro-jokes-worker.armanashkumar123.workers.dev/music/redirect" target="_blank">
+    <img src="https://acro-jokes-worker.armanashkumar123.workers.dev/music" alt="Live Rotating Audio Feed" width="100%" style="max-width: 680px;" />
   </a>
 </p>
 
 <br>
 
-<!-- RANDOM TECH JOKE SECTION -->
+<!-- RANDOM TECH JOKE SECTION (LIVE WORKER) -->
 <p align="center">
   <img src="assets/hdr_intel.svg" alt="Random Tech Joke Header" width="100%" style="max-width: 820px;" />
 </p>
@@ -149,7 +156,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 
 <br>
 
-<!-- TRANSMISSION LINKS -->
+<!-- TRANSMISSION LINKS & BUY ME A COFFEE -->
 <p align="center">
   <img src="assets/hdr_connect.svg" alt="Transmission Links Header" width="100%" style="max-width: 820px;" />
 </p>
@@ -157,6 +164,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 <p align="center">
   <a href="https://acrox.space" target="_blank"><img align="center" src="https://img.shields.io/badge/Website-46BC99?style=for-the-badge&logo=About.me&logoColor=white" alt="Personal Website"/></a>
   <a href="https://github.com/acro777x" target="_blank"><img align="center" src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile"/></a>
+  <a href="https://www.buymeacoffee.com/acro777x" target="_blank"><img align="center" src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee"/></a>
   <a href="mailto:contact@acrox.space"><img align="center" src="https://img.shields.io/badge/Encrypted_Comm-000000?style=for-the-badge&logo=protonmail&logoColor=52f2b1" alt="Encrypted Email"/></a>
 </p>
 
