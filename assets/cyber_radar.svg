@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="100%" height="auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" width="100%" height="auto">
   <defs>
-    <!-- Neon glow filter -->
-    <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
+    <!-- Cyan & Mint Glow Filter -->
+    <filter id="cyberGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
-    <filter id="radar-glow" x="-40%" y="-40%" width="180%" height="180%">
+    <filter id="intenseGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -16,192 +16,199 @@
       </feMerge>
     </filter>
 
-    <!-- Deep Space Cyber Gradient -->
-    <radialGradient id="spaceGrad" cx="50%" cy="50%" r="70%">
-      <stop offset="0%" stop-color="#0a131c" />
-      <stop offset="60%" stop-color="#070b0f" />
-      <stop offset="100%" stop-color="#030508" />
+    <!-- Deep Space Background -->
+    <radialGradient id="spaceBg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#07111c" />
+      <stop offset="65%" stop-color="#040910" />
+      <stop offset="100%" stop-color="#020407" />
     </radialGradient>
 
-    <!-- Earth Atmosphere Halo Gradient -->
-    <radialGradient id="globeAtmosphere" cx="50%" cy="50%" r="50%">
-      <stop offset="70%" stop-color="#52f2b1" stop-opacity="0" />
-      <stop offset="95%" stop-color="#52f2b1" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#52f2b1" stop-opacity="0.4" />
+    <!-- Globe Ocean & Atmosphere -->
+    <radialGradient id="earthOcean" cx="42%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#0d243a" />
+      <stop offset="70%" stop-color="#071422" />
+      <stop offset="100%" stop-color="#030810" />
     </radialGradient>
 
-    <!-- Linear Radar Beam Gradient -->
-    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#52f2b1" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#52f2b1" stop-opacity="0.9" />
-    </linearGradient>
+    <radialGradient id="atmosphereHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="78%" stop-color="#00e5ff" stop-opacity="0" />
+      <stop offset="94%" stop-color="#00e5ff" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#52f2b1" stop-opacity="0.6" />
+    </radialGradient>
 
     <!-- Grid Pattern -->
-    <pattern id="radarGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#52f2b1" stroke-width="0.5" stroke-opacity="0.07" />
+    <pattern id="hudGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#00e5ff" stroke-width="0.4" stroke-opacity="0.06" />
     </pattern>
   </defs>
 
   <style>
-    @keyframes radarRotate {
-      0%   { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    @keyframes pulseRing {
-      0%   { r: 3px; opacity: 1; stroke-width: 2px; }
-      100% { r: 24px; opacity: 0; stroke-width: 0.5px; }
-    }
-    @keyframes attackDash1 {
-      0%   { stroke-dashoffset: 400; opacity: 0.2; }
-      30%  { opacity: 1; }
-      100% { stroke-dashoffset: 0; opacity: 0.1; }
-    }
-    @keyframes attackDash2 {
-      0%   { stroke-dashoffset: 500; opacity: 0.1; }
+    @keyframes laserDash1 {
+      0%   { stroke-dashoffset: 400; opacity: 0.1; }
       40%  { opacity: 1; }
       100% { stroke-dashoffset: 0; opacity: 0.2; }
     }
-    @keyframes blinkAlert {
-      0%, 100% { opacity: 1; }
-      50%      { opacity: 0.4; }
+    @keyframes laserDash2 {
+      0%   { stroke-dashoffset: 500; opacity: 0.2; }
+      50%  { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 0.1; }
     }
-    @keyframes sweepGlow {
-      0%, 100% { opacity: 0.7; }
-      50%      { opacity: 1; filter: drop-shadow(0 0 6px #52f2b1); }
+    @keyframes impactPulse {
+      0%   { r: 3px; opacity: 1; stroke-width: 2.5px; }
+      100% { r: 26px; opacity: 0; stroke-width: 0.4px; }
+    }
+    @keyframes radarScan {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.3; }
     }
 
-    .globe-center {
-      transform-origin: 410px 210px;
-    }
-    .radar-sweep {
-      transform-origin: 410px 210px;
-      animation: radarRotate 8s linear infinite;
-    }
-    .pulse-ring-1 {
-      animation: pulseRing 2.2s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
-    }
-    .pulse-ring-2 {
-      animation: pulseRing 2.2s infinite cubic-bezier(0.2, 0.8, 0.4, 1) 0.7s;
-    }
-    .pulse-ring-3 {
-      animation: pulseRing 2.2s infinite cubic-bezier(0.2, 0.8, 0.4, 1) 1.4s;
-    }
-    .attack-arc-1 {
-      stroke-dasharray: 200 200;
-      animation: attackDash1 3s linear infinite;
-    }
-    .attack-arc-2 {
-      stroke-dasharray: 260 260;
-      animation: attackDash2 3.6s linear infinite 0.8s;
-    }
-    .attack-arc-3 {
+    .laser-1 {
       stroke-dasharray: 220 220;
-      animation: attackDash1 2.8s linear infinite 1.5s;
+      animation: laserDash1 2.8s linear infinite;
     }
-    .alert-tag {
-      animation: blinkAlert 1.5s infinite ease-in-out;
+    .laser-2 {
+      stroke-dasharray: 280 280;
+      animation: laserDash2 3.4s linear infinite 0.7s;
     }
-    .hud-title {
-      animation: sweepGlow 3s infinite ease-in-out;
+    .laser-3 {
+      stroke-dasharray: 240 240;
+      animation: laserDash1 3.1s linear infinite 1.4s;
+    }
+    .shockwave-1 {
+      animation: impactPulse 2.2s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+    }
+    .shockwave-2 {
+      animation: impactPulse 2.2s cubic-bezier(0.1, 0.8, 0.3, 1) infinite 0.8s;
+    }
+    .shockwave-3 {
+      animation: impactPulse 2.2s cubic-bezier(0.1, 0.8, 0.3, 1) infinite 1.5s;
+    }
+    .scan-beam {
+      transform-origin: 410px 225px;
+      animation: radarScan 10s linear infinite;
+    }
+    .live-dot {
+      animation: blinkDot 1.4s infinite ease-in-out;
     }
     text {
-      font-family: 'Consolas', 'Fira Code', 'Monaco', monospace;
+      font-family: 'Consolas', 'Fira Code', 'Monaco', 'Courier New', monospace;
     }
   </style>
 
   <!-- Container Box -->
-  <rect x="1" y="1" width="818" height="418" rx="10" fill="url(#spaceGrad)" stroke="#52f2b1" stroke-opacity="0.3" stroke-width="1.2" />
+  <rect x="1" y="1" width="818" height="438" rx="10" fill="url(#spaceBg)" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="1.2" />
+  <rect x="2" y="2" width="816" height="436" fill="url(#hudGrid)" rx="9" />
 
-  <!-- Background Radar Grid -->
-  <rect x="2" y="2" width="816" height="416" fill="url(#radarGrid)" rx="9" />
+  <!-- ================= TOP HEADER (CLEAN SPACING, NO UNDERSCORES) ================= -->
+  <line x1="1" y1="36" x2="819" y2="36" stroke="#00e5ff" stroke-opacity="0.18" stroke-width="1" />
+  <circle cx="22" cy="18" r="4" fill="#00e5ff" class="live-dot" filter="url(#cyberGlow)" />
+  <text x="36" y="22" font-size="11" font-weight="bold" fill="#00e5ff" letter-spacing="2.5">KASPERSKY CYBERTHREAT RADAR   //   REAL TIME THREAT TELEMETRY</text>
+  <text x="796" y="22" font-size="10.5" fill="#8b949e" text-anchor="end" letter-spacing="1">[12:00:00 UTC]</text>
 
-  <!-- Target Center Coordinates HUD -->
-  <circle cx="410" cy="210" r="160" fill="none" stroke="#52f2b1" stroke-opacity="0.08" stroke-dasharray="4 6" />
-  <circle cx="410" cy="210" r="125" fill="none" stroke="#52f2b1" stroke-opacity="0.12" />
-  <circle cx="410" cy="210" r="90" fill="none" stroke="#52f2b1" stroke-opacity="0.15" stroke-dasharray="8 8" />
-  <circle cx="410" cy="210" r="3" fill="#52f2b1" opacity="0.8" />
+  <!-- ================= REALISTIC 3D EARTH GLOBE ================= -->
+  <!-- Outer Atmosphere Halo & Sphere Base -->
+  <circle cx="410" cy="225" r="145" fill="none" stroke="#00e5ff" stroke-opacity="0.12" stroke-dasharray="5 5" />
+  <circle cx="410" cy="225" r="132" fill="url(#earthOcean)" stroke="#00e5ff" stroke-width="1.8" stroke-opacity="0.7" filter="url(#cyberGlow)" />
+  <circle cx="410" cy="225" r="132" fill="url(#atmosphereHalo)" />
 
-  <!-- ================= 3D WIREFRAME GLOBE ================= -->
-  <g class="globe-center">
-    <!-- Earth Outer Sphere & Atmosphere Halo -->
-    <circle cx="410" cy="210" r="125" fill="#04080c" stroke="#52f2b1" stroke-width="1.5" stroke-opacity="0.6" filter="url(#neon-glow)" />
-    <circle cx="410" cy="210" r="125" fill="url(#globeAtmosphere)" />
+  <!-- 3D Sphericity Grids (Latitude & Longitude) -->
+  <ellipse cx="410" cy="225" rx="132" ry="36" fill="none" stroke="#00e5ff" stroke-opacity="0.22" stroke-width="0.8" />
+  <ellipse cx="410" cy="225" rx="132" ry="78" fill="none" stroke="#00e5ff" stroke-opacity="0.18" stroke-width="0.8" />
+  <ellipse cx="410" cy="225" rx="132" ry="112" fill="none" stroke="#00e5ff" stroke-opacity="0.15" stroke-width="0.8" />
+  <ellipse cx="410" cy="225" rx="40" ry="132" fill="none" stroke="#00e5ff" stroke-opacity="0.2" stroke-width="0.8" />
+  <ellipse cx="410" cy="225" rx="80" ry="132" fill="none" stroke="#00e5ff" stroke-opacity="0.18" stroke-width="0.8" />
+  <ellipse cx="410" cy="225" rx="114" ry="132" fill="none" stroke="#00e5ff" stroke-opacity="0.15" stroke-width="0.8" />
 
-    <!-- Latitude Rings (3D Ellipses) -->
-    <ellipse cx="410" cy="210" rx="125" ry="32" fill="none" stroke="#52f2b1" stroke-opacity="0.25" stroke-width="0.9" />
-    <ellipse cx="410" cy="210" rx="125" ry="72" fill="none" stroke="#52f2b1" stroke-opacity="0.22" stroke-width="0.9" />
-    <ellipse cx="410" cy="210" rx="125" ry="105" fill="none" stroke="#52f2b1" stroke-opacity="0.18" stroke-width="0.9" />
-    <line x1="285" y1="210" x2="535" y2="210" stroke="#52f2b1" stroke-opacity="0.3" stroke-width="1" />
+  <!-- ================= REALISTIC CONTINENT OUTLINES & NATIONS ================= -->
+  <g fill="#52f2b1" fill-opacity="0.2" stroke="#52f2b1" stroke-width="1.2" stroke-opacity="0.85" filter="url(#cyberGlow)">
+    <!-- EURASIA: Europe & Russia -->
+    <path d="M 335,160 Q 350,140 375,135 Q 405,130 440,132 Q 480,135 510,148 Q 525,160 515,175 Q 490,172 465,165 Q 430,170 410,180 Q 380,182 360,195 Q 345,188 335,175 Z" />
 
-    <!-- Longitude Rings (3D Ellipses) -->
-    <ellipse cx="410" cy="210" rx="35" ry="125" fill="none" stroke="#52f2b1" stroke-opacity="0.25" stroke-width="0.9" />
-    <ellipse cx="410" cy="210" rx="75" ry="125" fill="none" stroke="#52f2b1" stroke-opacity="0.22" stroke-width="0.9" />
-    <ellipse cx="410" cy="210" rx="110" ry="125" fill="none" stroke="#52f2b1" stroke-opacity="0.18" stroke-width="0.9" />
-    <line x1="410" y1="85" x2="410" y2="335" stroke="#52f2b1" stroke-opacity="0.3" stroke-width="1" />
+    <!-- BRITISH ISLES -->
+    <path d="M 338,150 Q 344,142 348,148 Q 345,155 338,150 Z" />
 
-    <!-- 3D Earth Continents Vector Clusters (Dots & Nodes) -->
-    <!-- North America (US/West) -->
-    <circle cx="340" cy="170" r="3" fill="#58a6ff" opacity="0.9" />
-    <circle cx="355" cy="180" r="2.5" fill="#58a6ff" opacity="0.7" />
-    <circle cx="330" cy="185" r="2" fill="#58a6ff" opacity="0.7" />
+    <!-- INDIA (Distinct Triangular Peninsula) -->
+    <path d="M 445,195 Q 458,190 472,192 Q 478,212 470,235 Q 462,252 458,258 Q 452,248 448,230 Q 442,212 445,195 Z" fill-opacity="0.32" stroke="#00e5ff" stroke-width="1.6" />
 
-    <!-- Europe / London / Frankfurt -->
-    <circle cx="415" cy="165" r="3.5" fill="#52f2b1" opacity="0.9" />
-    <circle cx="425" cy="172" r="2.5" fill="#52f2b1" opacity="0.8" />
+    <!-- MIDDLE EAST & ARABIAN PENINSULA -->
+    <path d="M 405,192 Q 425,188 435,195 Q 438,215 425,232 Q 412,228 408,210 Z" />
 
-    <!-- Asia / India / Delhi / Mumbai Hub -->
-    <circle cx="465" cy="198" r="4" fill="#52f2b1" filter="url(#neon-glow)" />
-    <circle cx="458" cy="205" r="2.5" fill="#52f2b1" opacity="0.8" />
-    <circle cx="478" cy="192" r="2.5" fill="#52f2b1" opacity="0.7" />
+    <!-- EAST ASIA & CHINA -->
+    <path d="M 470,165 Q 500,162 522,175 Q 532,195 515,215 Q 492,212 478,195 Z" />
 
-    <!-- East Asia / Tokyo / Singapore -->
-    <circle cx="495" cy="185" r="3" fill="#58a6ff" opacity="0.9" />
-    <circle cx="482" cy="225" r="3" fill="#58a6ff" opacity="0.8" />
+    <!-- JAPAN ARCHIPELAGO -->
+    <path d="M 532,178 Q 538,172 540,182 Q 536,192 530,188 Z" />
 
-    <!-- Rotating Sonar Sweep Beam -->
-    <g class="radar-sweep">
-      <path d="M 410 210 L 410 85 A 125 125 0 0 1 520 150 Z" fill="url(#beamGrad)" opacity="0.25" />
-      <line x1="410" y1="210" x2="520" y2="150" stroke="#52f2b1" stroke-width="1.8" filter="url(#neon-glow)" />
-    </g>
+    <!-- AFRICA -->
+    <path d="M 345,200 Q 375,190 405,210 Q 415,235 418,265 Q 405,305 385,322 Q 365,300 355,260 Q 342,235 345,200 Z" />
+
+    <!-- SOUTHEAST ASIA & INDONESIA -->
+    <path d="M 485,230 Q 505,225 515,235 Q 495,248 485,230 Z" />
+    <path d="M 475,255 Q 498,252 510,260 Q 492,266 475,255 Z" />
+
+    <!-- AUSTRALIA -->
+    <path d="M 495,282 Q 525,275 540,295 Q 535,325 510,335 Q 490,320 488,300 Z" />
   </g>
 
-  <!-- ================= LIVE CYBER ATTACK TRAJECTORIES ================= -->
-  <!-- Attack Arc 1: Frankfurt (415, 165) -> India / Delhi Hub (465, 198) -->
-  <path d="M 415 165 Q 435 130 465 198" fill="none" stroke="#ff5f56" stroke-width="2" class="attack-arc-1" filter="url(#neon-glow)" />
-  <circle cx="465" cy="198" class="pulse-ring-1" fill="none" stroke="#ff5f56" />
+  <!-- ================= TARGET NATION HUBS (WITH LABELS) ================= -->
+  <!-- Moscow / RU Hub -->
+  <circle cx="430" cy="155" r="3.5" fill="#ff5f56" filter="url(#intenseGlow)" />
+  <text x="430" y="148" font-size="9" fill="#ff5f56" text-anchor="middle" font-weight="bold">RU [01]</text>
 
-  <!-- Attack Arc 2: US West (340, 170) -> Tokyo (495, 185) -->
-  <path d="M 340 170 Q 420 110 495 185" fill="none" stroke="#ffbd2e" stroke-width="1.8" class="attack-arc-2" />
-  <circle cx="495" cy="185" class="pulse-ring-2" fill="none" stroke="#ffbd2e" />
+  <!-- Frankfurt / DE Hub -->
+  <circle cx="370" cy="168" r="3.5" fill="#00e5ff" filter="url(#intenseGlow)" />
+  <text x="360" y="162" font-size="9" fill="#00e5ff" font-weight="bold">DE [02]</text>
 
-  <!-- Attack Arc 3: Singapore (482, 225) -> India Hub (465, 198) -->
-  <path d="M 482 225 Q 480 205 465 198" fill="none" stroke="#52f2b1" stroke-width="1.8" class="attack-arc-3" />
-  <circle cx="465" cy="198" class="pulse-ring-3" fill="none" stroke="#52f2b1" />
+  <!-- New Delhi / India Hub -->
+  <circle cx="460" cy="215" r="4.5" fill="#52f2b1" filter="url(#intenseGlow)" />
+  <text x="472" y="218" font-size="10" fill="#52f2b1" font-weight="bold">INDIA [TARGET #1]</text>
 
-  <!-- ================= HUD TELEMETRY OVERLAYS ================= -->
-  <!-- Header Bar -->
-  <line x1="1" y1="36" x2="819" y2="36" stroke="#52f2b1" stroke-opacity="0.18" stroke-width="1" />
-  <circle cx="20" cy="18" r="4" fill="#ff5f56" class="alert-tag" />
-  <text x="32" y="22" font-size="12" font-weight="bold" fill="#52f2b1" class="hud-title">GLOBAL_CYBER_ATTACK_RADAR // 3D_EARTH_TELEMETRY</text>
-  <text x="796" y="22" font-size="11" fill="#8b949e" text-anchor="end">[12:00:00 UTC]</text>
+  <!-- Singapore Hub -->
+  <circle cx="492" cy="245" r="3.5" fill="#00e5ff" />
+  <text x="502" y="248" font-size="8.5" fill="#00e5ff">SG [04]</text>
 
-  <!-- Left Cyber Telemetry Panel -->
-  <rect x="20" y="52" width="200" height="96" rx="6" fill="#070d14" fill-opacity="0.85" stroke="#52f2b1" stroke-opacity="0.25" stroke-width="1" />
-  <text x="32" y="70" font-size="10.5" font-weight="bold" fill="#52f2b1">▸ ACTIVE_THREAT_VECTORS</text>
-  <text x="32" y="88" font-size="10" fill="#e6edf3">DDoS FLOOD  : <tspan fill="#ff5f56">CRITICAL</tspan></text>
-  <text x="32" y="104" font-size="10" fill="#e6edf3">SQLi PROBES : <tspan fill="#ffbd2e">ELEVATED</tspan></text>
-  <text x="32" y="120" font-size="10" fill="#e6edf3">ZERO-DAY C2 : <tspan fill="#52f2b1">BLOCKED</tspan></text>
-  <text x="32" y="136" font-size="10" fill="#8b949e">DEFCON LEVEL: <tspan fill="#ff5f56" font-weight="bold" class="alert-tag">DEFCON 1</tspan></text>
+  <!-- Tokyo / Japan Hub -->
+  <circle cx="535" cy="182" r="3.5" fill="#ffbd2e" />
+  <text x="545" y="180" font-size="8.5" fill="#ffbd2e">JP [05]</text>
 
-  <!-- Right Attack Counters Panel -->
-  <rect x="600" y="52" width="200" height="96" rx="6" fill="#070d14" fill-opacity="0.85" stroke="#52f2b1" stroke-opacity="0.25" stroke-width="1" />
-  <text x="612" y="70" font-size="10.5" font-weight="bold" fill="#52f2b1">▸ INTERCEPT_METRICS</text>
-  <text x="612" y="90" font-size="10" fill="#8b949e">TOTAL ATTACKS BLOCKED:</text>
-  <text x="612" y="112" font-size="15" font-weight="bold" fill="#52f2b1">1,492,830</text>
-  <text x="612" y="134" font-size="9.5" fill="#7ee787">● GLOBAL HONEYPOTS: ARMED</text>
+  <!-- ================= KASPERSKY ATTACK LASER TRAJECTORIES ================= -->
+  <!-- Attack Laser 1: Russia (430, 155) -> India Hub (460, 215) -->
+  <path d="M 430 155 Q 425 185 460 215" fill="none" stroke="#ff2a55" stroke-width="2.2" class="laser-1" filter="url(#intenseGlow)" />
+  <circle cx="460" cy="215" class="shockwave-1" fill="none" stroke="#ff2a55" />
 
-  <!-- Bottom Terminal Logs -->
-  <rect x="20" y="348" width="780" height="52" rx="6" fill="#070d14" fill-opacity="0.85" stroke="#52f2b1" stroke-opacity="0.2" stroke-width="1" />
-  <text x="32" y="368" font-size="10" fill="#8b949e"><tspan fill="#52f2b1" font-weight="bold">[INTERCEPT_LOG]</tspan> 0x89F4: TCP SYN Flood targeted at edge ingress // Filter applied in 1.2ms</text>
-  <text x="32" y="386" font-size="10" fill="#8b949e"><tspan fill="#52f2b1" font-weight="bold">[STEALTH_SHIELD]</tspan> AES-256-GCM encrypted tunnel active // Zero unauthorized probes permitted</text>
+  <!-- Attack Laser 2: Germany (370, 168) -> India Hub (460, 215) -->
+  <path d="M 370 168 Q 405 170 460 215" fill="none" stroke="#00e5ff" stroke-width="2" class="laser-2" filter="url(#intenseGlow)" />
+  <circle cx="460" cy="215" class="shockwave-2" fill="none" stroke="#00e5ff" />
+
+  <!-- Attack Laser 3: Tokyo (535, 182) -> Singapore (492, 245) -->
+  <path d="M 535 182 Q 528 215 492 245" fill="none" stroke="#ffbd2e" stroke-width="1.8" class="laser-3" />
+  <circle cx="492" cy="245" class="shockwave-3" fill="none" stroke="#ffbd2e" />
+
+  <!-- ================= TELEMETRY HUD PANELS ================= -->
+  <!-- Left Panel: Kaspersky Threat Categories -->
+  <rect x="20" y="52" width="195" height="110" rx="6" fill="#050a12" fill-opacity="0.9" stroke="#00e5ff" stroke-opacity="0.25" stroke-width="1" />
+  <text x="32" y="70" font-size="10" font-weight="bold" fill="#00e5ff" letter-spacing="1">▸ DETECTIONS BY PROTOCOL</text>
+  <text x="32" y="88" font-size="9.5" fill="#e6edf3">OAS (ON ACCESS)  : <tspan fill="#ff2a55" font-weight="bold">4,891,200</tspan></text>
+  <text x="32" y="104" font-size="9.5" fill="#e6edf3">ODS (ON DEMAND)  : <tspan fill="#ffbd2e">1,248,390</tspan></text>
+  <text x="32" y="120" font-size="9.5" fill="#e6edf3">WAV (WEB VIRUS)  : <tspan fill="#52f2b1">2,810,450</tspan></text>
+  <text x="32" y="136" font-size="9.5" fill="#e6edf3">MAV (MAIL VIRUS) : <tspan fill="#00e5ff">892,104</tspan></text>
+  <text x="32" y="152" font-size="9.5" fill="#8b949e">IDS (INTRUSIONS) : <tspan fill="#7ee787">ACTIVE SHIELD</tspan></text>
+
+  <!-- Right Panel: Top Targeted Nations -->
+  <rect x="605" y="52" width="195" height="110" rx="6" fill="#050a12" fill-opacity="0.9" stroke="#00e5ff" stroke-opacity="0.25" stroke-width="1" />
+  <text x="617" y="70" font-size="10" font-weight="bold" fill="#00e5ff" letter-spacing="1">▸ TOP TARGETED NATIONS</text>
+  <text x="617" y="88" font-size="9.5" fill="#e6edf3">#1 INDIA         : <tspan fill="#ff2a55" font-weight="bold">CRITICAL</tspan></text>
+  <text x="617" y="104" font-size="9.5" fill="#e6edf3">#2 UNITED STATES : <tspan fill="#ffbd2e">ELEVATED</tspan></text>
+  <text x="617" y="120" font-size="9.5" fill="#e6edf3">#3 GERMANY       : <tspan fill="#52f2b1">STABLE</tspan></text>
+  <text x="617" y="138" font-size="9" fill="#8b949e">TOTAL ATTACKS TODAY:</text>
+  <text x="617" y="154" font-size="14" font-weight="bold" fill="#00e5ff">18,492,034</text>
+
+  <!-- Bottom Console Status -->
+  <rect x="20" y="380" width="780" height="42" rx="6" fill="#050a12" fill-opacity="0.9" stroke="#00e5ff" stroke-opacity="0.2" stroke-width="1" />
+  <text x="32" y="398" font-size="9.5" fill="#8b949e"><tspan fill="#52f2b1" font-weight="bold">[KASPERSKY LIVE FEED]</tspan> Global threat vectors synchronized across 300 edge nodes. Real time telemetry active.</text>
+  <text x="32" y="413" font-size="9.5" fill="#8b949e"><tspan fill="#00e5ff" font-weight="bold">[CLICK TO OPEN]</tspan> View interactive 3D globe at <tspan fill="#52f2b1">cybermap.kaspersky.com</tspan></text>
 </svg>

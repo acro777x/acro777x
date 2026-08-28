@@ -42,21 +42,23 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 
 <br>
 
-<!-- 3D CYBER ATTACK EARTH RADAR SECTION -->
+<!-- KASPERSKY REALISTIC 3D CYBER ATTACK EARTH RADAR -->
 <p align="center">
-  <img src="https://acro-jokes-worker.armanashkumar123.workers.dev/radar" alt="Global Cyber Attack Radar" width="100%" style="max-width: 820px;" />
+  <a href="https://cybermap.kaspersky.com/" target="_blank" title="Launch Interactive 3D Kaspersky Cybermap">
+    <img src="https://acro-jokes-worker.armanashkumar123.workers.dev/radar" alt="Kaspersky Global Cyber Attack Radar" width="100%" style="max-width: 820px;" />
+  </a>
 </p>
 
 <br>
 
-<!-- AUDIO FEED SECTION (28 TRACKS ROTATION + LIVE WAVEFORM) -->
+<!-- AUDIO FEED (FULL NOVATOREM 80-BAR ROTATING WAVEFORM) -->
 <p align="center">
   <img src="assets/hdr_music.svg" alt="Audio Feed Header" width="100%" style="max-width: 820px;" />
 </p>
 
 <p align="center">
-  <a href="https://acro-jokes-worker.armanashkumar123.workers.dev/music/redirect" target="_blank">
-    <img src="https://acro-jokes-worker.armanashkumar123.workers.dev/music" alt="Live Rotating Audio Feed" width="100%" style="max-width: 680px;" />
+  <a href="https://acro-jokes-worker.armanashkumar123.workers.dev/music/redirect" target="_blank" title="Open Current Track in Spotify">
+    <img src="https://acro-jokes-worker.armanashkumar123.workers.dev/music" alt="Live Rotating Audio Feed" width="100%" style="max-width: 540px;" />
   </a>
 </p>
 
@@ -114,8 +116,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 </p>
 
 <p align="center">
-  <a href="https://github.com/acro777x" target="_blank">
-    <img src="https://streak-stats.vercel.app/?user=acro777x&theme=tokyonight&border=52f2b1&border_radius=10" alt="acro777x's GitHub Streak" width="100%" style="max-width: 440px;" />
+  <a href="https://streak-stats.vercel.app/?user=acro777x&theme=tokyonight&border=52f2b1&border_radius=10" alt="acro777x's GitHub Streak" width="100%" style="max-width: 440px;" />
   </a>
 </p>
 
