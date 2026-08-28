@@ -58,7 +58,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 </p>
 
 <p align="center">
-  <img src="https://kavirox.space/api/rotate" alt="Live Rotating Terminal Stream" />
+  <img src="https://readme-jokes.vercel.app/api" alt="Random Tech Joke" />
 </p>
 
 <p align="center">
@@ -105,7 +105,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
     <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=acro777x&cache_seconds=7200&layout=compact&theme=tokyonight&border_radius=10&border_color=52f2b1" alt="acro777x's GitHub Stats" />
   </a>
   <a href="https://github.com/acro777x" target="_blank">
-    <img height="180em" src="https://streak-stats.demolab.com/?user=acro777x&theme=tokyonight&hide_border=false&border=52f2b1&border_radius=10&cache_seconds=86400" alt="acro777x's GitHub Streak" />
+    <img height="180em" src="https://streak-stats.vercel.app/?user=acro777x&theme=tokyonight&border=52f2b1&border_radius=10" alt="acro777x's GitHub Streak" />
   </a>
 </p>
 
@@ -116,7 +116,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=acro777x&bg_color=0d1117&color=52f2b1&line=52f2b1&point=ffffff&area=true&hide_border=true" alt="Activity Graph" width="100%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=acro777x&theme=tokyonight" alt="GitHub Profile Summary" width="100%" style="max-width: 820px;" />
 </p>
 
 <p align="center">
@@ -152,7 +152,7 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
 <p align="center">
   <a href="https://acrox.space" target="_blank"><img align="center" src="https://img.shields.io/badge/Website-46BC99?style=for-the-badge&logo=About.me&logoColor=white" alt="Personal Website"/></a>
   <a href="https://github.com/acro777x" target="_blank"><img align="center" src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile"/></a>
-  <a href="mailto:contact@acrox.space"><img align="center" src="https://img.shields.io/badge/Encrypted_Comm-000000?style=for-the-badge&logo=protonmail&logoColor=52f2b1" alt="Encrypted Email"/></a>
+  <a href="mailto:contact@acrox.space"><img align="center" src="https://img.shields.io/badge/Encrypted_Comm-000000?style=for-the-badge&logo=protonmail&logoColor=52f2b1&borderColor=52f2b1" alt="Encrypted Email"/></a>
 </p>
 
 <br>
