@@ -127,13 +127,6 @@ I am a Cybersecurity Researcher and Full-Stack Architect obsessed with zero-late
   </a>
 </p>
 
-<!-- Live GitHub Contributions Heatmap -->
-<p align="center">
-  <a href="https://github.com/acro777x" target="_blank">
-    <img src="https://ghchart.rshah.org/52f2b1/acro777x" alt="acro777x's GitHub Contributions Calendar" width="100%" style="max-width: 820px;" />
-  </a>
-</p>
-
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=acro777x&theme=tokyonight" alt="GitHub Profile Summary" width="100%" style="max-width: 720px;" />
 </p>
