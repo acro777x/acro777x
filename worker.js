@@ -1,6 +1,6 @@
 /**
  * Cloudflare Worker: Acro Cyber Suite
- * - /              : Dynamic Non-Repeating Tech Joke SVG
+ * - /              : Dynamic 3s Rotating Tech Joke SVG (No Repeats, Clean ACRO JOKE Header)
  * - /music         : Full Novatorem Waveform & Rotating Spotify Player SVG (Studio Master HD Covers)
  * - /music/redirect: Redirects to Spotify for current track
  * - /radar         : Kaspersky-Style Realistic 3D Earth Cyber Attack Map SVG
@@ -271,7 +271,6 @@ const JOKES = [
   ]
 ];
 
-let lastJokeIndex = -1;
 let lastTrackIndex = -1;
 
 function escapeXml(str) {
@@ -283,15 +282,6 @@ function escapeXml(str) {
     .replace(/'/g, "&apos;");
 }
 
-function getRandomJoke() {
-  let idx;
-  do {
-    idx = Math.floor(Math.random() * JOKES.length);
-  } while (idx === lastJokeIndex);
-  lastJokeIndex = idx;
-  return JOKES[idx];
-}
-
 function getRandomTrack() {
   let idx;
   do {
@@ -299,6 +289,24 @@ function getRandomTrack() {
   } while (idx === lastTrackIndex);
   lastTrackIndex = idx;
   return TRACKS[idx];
+}
+
+// Fisher-Yates shuffle for non-repeating lifetime sequence
+let shuffledJokes = [];
+let jokeCursor = 0;
+
+function getNonRepeatingBatch(count = 8) {
+  if (shuffledJokes.length === 0 || jokeCursor + count >= JOKES.length) {
+    shuffledJokes = [...JOKES];
+    for (let i = shuffledJokes.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledJokes[i], shuffledJokes[j]] = [shuffledJokes[j], shuffledJokes[i]];
+    }
+    jokeCursor = 0;
+  }
+  const batch = shuffledJokes.slice(jokeCursor, jokeCursor + count);
+  jokeCursor += count;
+  return batch;
 }
 
 const COMMON_HEADERS = {
@@ -863,11 +871,43 @@ border: 1px solid var(--border-color);
 </svg>`;
 }
 
-// ================= DYNAMIC TECH JOKE SVG (FIXED 2D ARRAY) =================
-function renderJokeSvg(rawQ, rawA) {
-  const q = escapeXml(rawQ);
-  const a = escapeXml(rawA);
-  const utc = new Date().toTimeString().slice(0, 8);
+// ================= DYNAMIC ROTATING TECH JOKE SVG (3s PER JOKE, NO REPEATS) =================
+function renderJokeSvg() {
+  const jokes = getNonRepeatingBatch(8);
+  const n = jokes.length;
+  const secPerJoke = 3.0;
+  const totalSec = n * secPerJoke;
+  const pct = 100.0 / n;
+  const fadeIn = (pct * 0.10).toFixed(2);
+  const stay = (pct * 0.90).toFixed(2);
+  const fadeOut = pct.toFixed(2);
+
+  let styles = `
+    @keyframes jokeCycle {
+      0% { opacity: 0; transform: translateY(3px); visibility: hidden; }
+      ${fadeIn}% { opacity: 1; transform: translateY(0); visibility: visible; }
+      ${stay}% { opacity: 1; transform: translateY(0); visibility: visible; }
+      ${fadeOut}% { opacity: 0; transform: translateY(-3px); visibility: hidden; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+    .joke-item {
+      opacity: 0;
+      animation: jokeCycle ${totalSec}s infinite ease-in-out;
+    }
+  `;
+
+  let slides = "";
+  for (let i = 0; i < n; i++) {
+    const delay = (i * secPerJoke).toFixed(1);
+    styles += ` .joke-${i} { animation-delay: ${delay}s; }`;
+    const q = escapeXml(jokes[i][0]);
+    const a = escapeXml(jokes[i][1]);
+    slides += `
+    <g class="joke-item joke-${i}">
+      <text x="20" y="56" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#f0f6fc">Q: ${q}</text>
+      <text x="20" y="84" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#52f2b1">A: ${a}</text>
+    </g>`;
+  }
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 112" width="100%" height="auto">
@@ -878,14 +918,18 @@ function renderJokeSvg(rawQ, rawA) {
     </linearGradient>
   </defs>
 
+  <style>
+    ${styles}
+  </style>
+
   <rect x="1" y="1" width="678" height="110" rx="8" fill="url(#bg)" stroke="#52f2b1" stroke-opacity="0.35" stroke-width="1.2" />
   <line x1="1" y1="28" x2="679" y2="28" stroke="#52f2b1" stroke-opacity="0.18" stroke-width="1" />
 
-  <text x="16" y="19" font-family="Consolas, monospace" font-size="11.5" font-weight="bold" fill="#52f2b1">⚡ RANDOM_TECH_JOKE // DYNAMIC_FEED</text>
-  <text x="664" y="19" font-family="Consolas, monospace" font-size="11" fill="#8b949e" text-anchor="end">[${utc} UTC]</text>
+  <!-- TOP BOX: ONLY ACRO JOKE WITH SPACING -->
+  <text x="16" y="19" font-family="Consolas, monospace" font-size="11.5" font-weight="bold" fill="#52f2b1" letter-spacing="3.5">⚡ ACRO JOKE</text>
+  <text x="664" y="19" font-family="Consolas, monospace" font-size="10.5" fill="#8b949e" text-anchor="end" letter-spacing="1">[3s ROTATION]</text>
 
-  <text x="20" y="56" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#f0f6fc">Q: ${q}</text>
-  <text x="20" y="84" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#52f2b1">A: ${a}</text>
+  ${slides}
 </svg>`;
 }
 
@@ -1136,9 +1180,8 @@ export default {
       });
     }
 
-    // Default Route / and /joke: Dynamic Non-Repeating Tech Joke
-    const [rawQ, rawA] = getRandomJoke();
-    return new Response(renderJokeSvg(rawQ, rawA), {
+    // Default Route / and /joke: Dynamic Non-Repeating 3s Rotating Tech Joke
+    return new Response(renderJokeSvg(), {
       status: 200,
       headers: COMMON_HEADERS
     });
